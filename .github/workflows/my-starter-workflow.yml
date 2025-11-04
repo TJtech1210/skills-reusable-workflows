@@ -6,10 +6,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v4
-
       - name: Run a multi-line script
         run: |
           echo Add other actions to build,
@@ -23,3 +21,9 @@ jobs:
     with:
       node:  ${{ matrix.nodeversion }}
   
+    uses: ./.github/workflows/reusable-workflow.yml
+    with:
+      node: 14
+
+
+    
